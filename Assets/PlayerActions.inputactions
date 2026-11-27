@@ -28,12 +28,34 @@
             "bindings": [
                 {
                     "name": "",
+                    "id": "118119f3-4cab-4457-a598-a74b0aa58c01",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player2",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e0621f7e-5c06-4d2f-a500-cbfd5a496374",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Player1",
                     "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4a2effb6-56c0-48bc-857b-412b74055519",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player2",
+                    "action": "Up",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -43,7 +65,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Player1",
                     "action": "Up",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -53,8 +75,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
+            "name": "Player1",
+            "bindingGroup": "Player1",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
@@ -62,6 +84,11 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "Player2",
+            "bindingGroup": "Player2",
+            "devices": []
         }
     ]
 }

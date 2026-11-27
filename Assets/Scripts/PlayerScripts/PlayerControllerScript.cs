@@ -15,11 +15,14 @@ public class PlayerControllerScript : MonoBehaviour
     public InputActionReference down;
     private bool lastUp;
     private bool lastDown;
+
+    [SerializeField] private string thisPlayerControlSchemeName; //terrible practice
     public delegate void PlayerMoveDirection(int upOrdown, bool isPressed); //1 up, 0 stasis, -1 down
     public PlayerMoveDirection OnPlayerMoveDirectionSet;
     public UnityEvent MoveUp;
     public UnityEvent MoveDown;
-    
+
+    [SerializeField] private PlayerInput playerInput;
 
 
     //Input.GetKeyDown = action.WasPressedThisFrame(); true for a single frame after being pressed
@@ -28,6 +31,7 @@ public class PlayerControllerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ConnectInput();
         ConnectReferences();
         ConnectEvents();
         //I might not even need this script
@@ -43,6 +47,12 @@ public class PlayerControllerScript : MonoBehaviour
     {
         //MoveUp.AddListener(playerMovementScript.MovePlayerUp);
         //MoveDown.AddListener(playerMovementScript.MovePlayerDown);
+    }
+    private void ConnectInput()
+    {
+        playerInput.SwitchCurrentControlScheme(thisPlayerControlSchemeName, Keyboard.current);
+        Debug.Log($"This player is {thisPlayerControlSchemeName}");
+        //now both are listening for player 2??
     }
     private void ConnectReferences()
     {
